@@ -1,0 +1,17 @@
+{
+  "name": "FestBCN",
+  "version": "0.0.0",
+  "description": "Api REST con MEAN en 20 min",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+      "mongoose": "*",
+      "express": "*",
+      "body-parser": "*",
+      "method-override": "*"
+  },
+  "author": "Borja Godoy Gago",
+  "license": "BSD-2-Clause"
+}
