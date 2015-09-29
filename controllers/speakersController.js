@@ -9,11 +9,13 @@ exports.findAllSpeakers= function(req,res){
         if(err)
             console.log("no se han encontrado speakers");
         else
-            res.status(200).send(speaker);
+             res.status(200).jsonp(speaker);
     });
 }
 
 exports.addSpeaker= function(req, res){
+    console.log('POST');
+    console.log(req.body);
     var speaker= new Speakers({
         nombre: req.body.nombre,
         charla: req.body.charla,
@@ -23,6 +25,6 @@ exports.addSpeaker= function(req, res){
         if(err) 
             res.send(500, err.message);
         else
-            res.status(200).send(speaker);
+            res.status(200).jsonp(speaker);
     });
 }
