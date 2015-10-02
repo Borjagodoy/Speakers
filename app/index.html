@@ -4,10 +4,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ejemplo MEAN</title>
+	<title>Gestión Speakers</title>
 	<!-- Cargamos bootstrap -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-	<!-- Cargamos angular -->
+	<!-- css -->
+	<link href="../css/base.min.css" rel="stylesheet">
+
+	<!-- css for this project -->
+	<link href="/css/project.min.css" rel="stylesheet">
+    <!-- Cargamos angular -->
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 	<!-- Cargamos el javascript de angular -->
 	<script src="angularCtrl.js"></script>
@@ -17,7 +22,7 @@
 	<div class="container">
 
 		<div class="jumbotron text-center" ng-prueba>
-			<h1>Nº de Registros: <span class="label label-success">{{ speakers.length }}</span></h1>
+			<h1>Speakers: <span class="label label-success">{{ speakers.length }}</span></h1>
 		</div>
 
 		<div class="row">
@@ -38,6 +43,7 @@
 			<div class="col-sm-4 col-sm-offset-1 text-center">
 				<form name="myForm">
 					<div class="form-group">
+                        
 						<input type="text" class="form-control input-lg text-center" placeholder="Nombre" ng-model="newSpeaker.nombre" required>
 						<br>
 						<input type="text" class="form-control input-lg text-center" placeholder="Apellido" ng-model="newSpeaker.charla" required>
@@ -46,9 +52,9 @@
 					</div>
 
 					<!-- Acciones que podemos realizar en el formulario -->
-					<button type="submit" class="btn btn-success btn-lg" ng-click="registrarPersona()" ng-disabled="myForm.$invalid || selected">Registrar</button>
-					<button type="submit" class="btn btn-warning btn-lg" ng-click="modificarPersona(newPersona)" ng-disabled="!newSpeaker.nombre || !newSpeaker.charla || !newSpeaker.tiempo || !selected">Modificar</button>
-					<button type="submit" class="btn btn-danger btn-lg" ng-click="borrarPersona(newSpeaker)" ng-disabled="!newSpeaker.nombre || !newSpeaker.charla || !newSpeaker.tiempo || !selected">Borrar</button>
+					<button type="submit" class="btn btn-green" ng-click="registrarPersona()" ng-disabled="myForm.$invalid || selected">Registrar</button>
+					<button type="submit" class="btn btn-yellow" ng-click="modificarPersona(newPersona)" ng-disabled="!newSpeaker.nombre || !newSpeaker.charla || !newSpeaker.tiempo || !selected">Modificar</button>
+					<button type="submit" class="btn btn-red" ng-click="borrarPersona(newSpeaker)" ng-disabled="!newSpeaker.nombre || !newSpeaker.charla || !newSpeaker.tiempo || !selected">Borrar</button>
 				</form>
 			</div>
 		</div>

@@ -10,7 +10,7 @@ var speakersCTRL = require('./controllers/speakersController');
 var app= express();
 
 mongoose.connect('mongodb://localhost/speakers', function(err) {  
-    // Comprobar errores siempre
+    
         if(!err) 
             console.log('BD Connect');    
 });
@@ -24,6 +24,7 @@ app.use(methodOverride());
 app.route('/speakers')
     .post(speakersCTRL.addSpeaker)
     .get(speakersCTRL.findAllSpeakers);
+
 app.route('/speakers/:id')
     .put(speakersCTRL.updateSpeaker)
     .delete(speakersCTRL.deleteSpeaker);
