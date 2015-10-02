@@ -28,3 +28,32 @@ exports.addSpeaker= function(req, res){
             res.status(200).jsonp(speaker);
     });
 }
+exports.updateSpeaker=function(req,res){
+    console.log('PUT');
+    console.log(req.param.id);
+    
+    Speakers.findById(req.params.id, function(err, speaker){
+        speaker.nombre= req.body.nombre,
+        speaker.charla= req.body.charla,
+        speaker.tiempo= req.body.tiempo
+        
+        speaker.save(function(err){
+            if(err)
+                res.send(500,err.message);
+            else
+                res.status(200).jsonp(speaker);
+        });
+    });
+}
+exports .deleteSpeaker=function(req, res){
+    Speakers.findById(req.params.id, function(err, speaker){
+        
+        speaker.remove(function(err){
+            if(err)
+                res.send(500,err.message);
+            else
+                res.status(200);
+        });
+    });
+}
+
